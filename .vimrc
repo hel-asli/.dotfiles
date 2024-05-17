@@ -23,7 +23,15 @@ Plug 'morhetz/gruvbox'
 " air line
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" norm
+Plug 'vim-syntastic/syntastic'
+Plug 'alexandregv/norminette-vim'
+" surround
+Plug 'tpope/vim-surround'
+
 " Vim-Plug configuration
+
 
 call plug#end()
 
@@ -38,4 +46,4 @@ hi Normal guibg=NONE ctermbg=NONE
 " Toggle NERDTree with Ctrl+d
 map <C-d> :NERDTreeToggle<CR>
 map <C-t> :FloatermToggle<CR>
-
+map <C-n> :Norminette<CR>
