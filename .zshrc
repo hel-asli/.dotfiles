@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -71,7 +70,8 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+#zsh-autosuggestions
+plugins=(git zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,13 +101,37 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias env="python3 -m venv env && source env/bin/activate"
+alias env_py="python3 -m venv env && source env/bin/activate"
 
 alias .zshrc="source ~/.zshrc"
 alias norm="norminette"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
  osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+
+# Set keyboard repeat rate
+osascript -e 'tell application "System Preferences" to set current pane to pane "com.apple.preference.keyboard"'
+osascript -e 'tell application "System Events" to tell process "System Preferences" to tell tab group 1 of window "Keyboard" to tell slider 2 to set value to 5' # Adjust the value as needed
+osascript -e 'tell application "System Preferences" to quit'
+
+# Set mouse tracking speed
+osascript -e 'tell application "System Preferences" to set current pane to pane "com.apple.preference.mouse"'
+osascript -e 'tell application "System Events" to tell process "System Preferences" to tell tab group 1 of window "Mouse" to tell slider 1 to set value to 5' # Adjust the value as needed
+osascript -e 'tell application "System Preferences" to quit'
+
+# Display HEL-ASLI banner
+if [[ $- == *i* ]]; then
+    echo -e "\033[1;36m"
+    cat << "EOF"
+ ██╗  ██╗███████╗██╗      █████╗ ███████╗██╗     ██╗
+ ██║  ██║██╔════╝██║     ██╔══██╗██╔════╝██║     ██║
+ ███████║█████╗  ██║     ███████║███████╗██║     ██║
+ ██╔══██║██╔══╝  ██║     ██╔══██║╚════██║██║     ██║
+ ██║  ██║███████╗███████╗██║  ██║███████║███████╗███████╗
+ ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
+EOF
+    echo -e "\033[0m\n"
+fi
 
 alias cclean='bash ~/Cleaner_42.sh'
 
