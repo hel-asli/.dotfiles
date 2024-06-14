@@ -70,8 +70,7 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-#zsh-autosuggestions
-plugins=(git zsh-syntax-highlighting colored-man-pages)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -105,19 +104,12 @@ alias env_py="python3 -m venv env && source env/bin/activate"
 
 alias .zshrc="source ~/.zshrc"
 alias norm="norminette"
+alias clean="bash ~/clean.sh"
+alias space="bash ~/space.sh"
 export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
 
  osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
-# Set keyboard repeat rate
-osascript -e 'tell application "System Preferences" to set current pane to pane "com.apple.preference.keyboard"'
-osascript -e 'tell application "System Events" to tell process "System Preferences" to tell tab group 1 of window "Keyboard" to tell slider 2 to set value to 5' # Adjust the value as needed
-osascript -e 'tell application "System Preferences" to quit'
-
-# Set mouse tracking speed
-osascript -e 'tell application "System Preferences" to set current pane to pane "com.apple.preference.mouse"'
-osascript -e 'tell application "System Events" to tell process "System Preferences" to tell tab group 1 of window "Mouse" to tell slider 1 to set value to 5' # Adjust the value as needed
-osascript -e 'tell application "System Preferences" to quit'
 
 # Display HEL-ASLI banner
 if [[ $- == *i* ]]; then
@@ -133,7 +125,5 @@ EOF
     echo -e "\033[0m\n"
 fi
 
-alias cclean='bash ~/Cleaner_42.sh'
-
 # Load Homebrew config script
-source $HOME/.brewconfig.zsh
+#source $HOME/.brewconfig.zsh
