@@ -70,7 +70,8 @@ ZSH_THEME="af-magic"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 #plugins=(git)
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting colored-man-pages)
+#  zsh-autosuggestions zsh-syntax-highlighting 
+plugins=(git colored-man-pages)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,24 +107,19 @@ alias .zshrc="source ~/.zshrc"
 alias norm="norminette"
 alias clean="bash ~/clean.sh"
 alias space="bash ~/space.sh"
-export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
-
- osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+alias firefox="open -a Firefox"
+alias code="open -a 'Visual Studio Code'"
+export PATH=$PATH:~/bin
+osascript -e 'tell app "System Events" to tell appearance preferences to set dark mode to not dark mode'
 
 
 # Display HEL-ASLI banner
-if [[ $- == *i* ]]; then
-    echo -e "\033[1;36m"
-    cat << "EOF"
- ██╗  ██╗███████╗██╗      █████╗ ███████╗██╗     ██╗
- ██║  ██║██╔════╝██║     ██╔══██╗██╔════╝██║     ██║
- ███████║█████╗  ██║     ███████║███████╗██║     ██║
- ██╔══██║██╔══╝  ██║     ██╔══██║╚════██║██║     ██║
- ██║  ██║███████╗███████╗██║  ██║███████║███████╗███████╗
- ╚═╝  ╚═╝╚══════╝╚══════╝╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝
-EOF
-    echo -e "\033[0m\n"
-fi
 
 # Load Homebrew config script
 #source $HOME/.brewconfig.zsh
+export PATH=$HOME/.brew/bin:$PATH
+export PATH=/Users/hel-asli/.brew/bin:/Users/hel-asli/.brew/bin:/Users/hel-asli/.brew/bin:/Users/hel-asli/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki:/Library/Apple/usr/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hel-asli/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hel-asli/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hel-asli/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:/Users/hel-asli/bin
+export C_INCLUDE_PATH="$HOME/.brew/include:$C_INCLUDE_PATH"
+export C_INCLUDE_PATH="$HOME/.brew/include:$C_INCLUDE_PATH"
+export LIBRARY_PATH="$HOME/.brew/lib:$LIBRARY_PATH"
