@@ -5,7 +5,8 @@ set cursorline
 set showmatch
 set wrap
 " highlight search
-set hlsearch
+" set hlsearch
+
 syntax enable
 
 if has('termguicolors')
