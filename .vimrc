@@ -47,4 +47,4 @@ hi Normal guibg=NONE ctermbg=NONE
 " Toggle NERDTree with Ctrl+d
 map <C-d> :NERDTreeToggle<CR>
 map <C-t> :FloatermToggle<CR>
-map <C-n> :Norminette<CR>
+" map <C-n> :Norminette<CR>
