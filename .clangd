@@ -1,0 +1,7 @@
+CompileFlags:
+  Add:
+    - -I/usr/include/c++/10   # Path to C++10 standard library headers
+    - -I/usr/include/x86_64-linux-gnu/c++/10  # Architecture-specific headers for C++10
+    - -I/usr/include/c++/11   # Path to C++11 standard library headers
+    - -I/usr/include/x86_64-linux-gnu/c++/11  # Architecture-specific headers for C++11
+
